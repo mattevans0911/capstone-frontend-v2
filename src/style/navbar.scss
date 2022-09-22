@@ -1,0 +1,40 @@
+.nav-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  width: auto;
+  background-color: #a5f1dc;
+  border-bottom: 1px solid #2a3166;
+
+  .nav-todo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-logout-wrapper {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .navbar-item {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    color: #2a3166;
+    cursor: pointer;
+
+    &:hover {
+      color: #f4abaa;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .navbar-item {
+      font-size: 0.75em;
+    }
+  }
+}
