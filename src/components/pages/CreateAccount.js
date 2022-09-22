@@ -7,7 +7,7 @@ function CreateAccount() {
   const [newUser, setNewUser] = useState(false);
 
   const handleCreateAccount = () => {
-    fetch("http://127.0.0.1:5000/user/signup", {
+    fetch("https://intense-basin-26666.herokuapp.com/user/signup", {
       method: "POST",
       body: JSON.stringify({
         username: createUsername,

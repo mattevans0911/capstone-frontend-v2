@@ -10,13 +10,13 @@ function Todo() {
   const userData = sessionStorage.getItem("username");
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/user/get/${userData}`)
+    fetch(`https://intense-basin-26666.herokuapp.com/user/get/${userData}`)
       .then((response) => response.json())
       .then((response) => setUserId(response.id));
   }, []);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/user/get/${userData}`)
+    fetch(`https://intense-basin-26666.herokuapp.com/user/get/${userData}`)
       .then((response) => response.json())
       .then((response) => setTodos(response.todo));
   });
@@ -24,7 +24,7 @@ function Todo() {
   //----Add todo functionality -----
   const handleCreateTodo = (event) => {
     event.preventDefault();
-    fetch("http://127.0.0.1:5000/todo/add", {
+    fetch("https://intense-basin-26666.herokuapp.com/todo/add", {
       method: "POST",
       body: JSON.stringify({
         content: content,
@@ -53,11 +53,13 @@ function Todo() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://127.0.0.1:5000/todo/delete/${id}`).then((response) => {
-      console.log(response);
-      const deletedTodo = todos.filter((item) => item.id !== id);
-      setTodos(deletedTodo);
-    });
+    axios
+      .delete(`https://intense-basin-26666.herokuapp.com/todo/delete/${id}`)
+      .then((response) => {
+        console.log(response);
+        const deletedTodo = todos.filter((item) => item.id !== id);
+        setTodos(deletedTodo);
+      });
   };
 
   if (!todos) {

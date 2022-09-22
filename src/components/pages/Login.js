@@ -10,7 +10,7 @@ function Login() {
 
   const configuration = {
     method: "post",
-    url: "http://127.0.0.1:5000/user/login",
+    url: "https://intense-basin-26666.herokuapp.com/user/login",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",

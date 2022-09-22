@@ -8,7 +8,7 @@ function NavBar() {
 
   const configuration = {
     method: "post",
-    url: "http://127.0.0.1:5000/user/logout",
+    url: "https://intense-basin-26666.herokuapp.com/user/logout",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
