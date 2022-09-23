@@ -72,25 +72,30 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 655px) {
   .login-wrapper {
-    .login-title {
-      font-size: 2em;
+    .form {
+      flex-direction: column;
+
+      .input-username {
+        margin-bottom: 5px;
+      }
+      .input-password {
+        margin-bottom: 5px;
+        margin-right: 10px;
+      }
+
+      .login-button {
+        margin-right: 15px;
+      }
     }
   }
-  .form {
-    flex-direction: column;
+}
 
-    .input-username {
-      margin-bottom: 5px;
-    }
-    .input-password {
-      margin-bottom: 5px;
-      margin-right: 10px;
-    }
-
-    .login-button {
-      margin-right: 15px;
+@media (max-width: 575px) {
+  .login-wrapper {
+    .login-title {
+      font-size: 2.25em;
     }
   }
 
