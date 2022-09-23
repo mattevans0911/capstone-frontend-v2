@@ -73,6 +73,11 @@
 }
 
 @media (max-width: 500px) {
+  .login-wrapper {
+    .login-title {
+      font-size: 2em;
+    }
+  }
   .form {
     flex-direction: column;
 

@@ -55,10 +55,12 @@
     }
 
     .render-wrapper {
+      height: 50vh;
       border: 2px solid #2a3166;
       border-radius: 15px;
       padding: 2px;
       width: 50%;
+      overflow: auto;
     }
   }
 
@@ -117,6 +119,7 @@
       }
 
       .render-wrapper {
+        height: 75vh;
         width: 75vw;
 
         overflow: auto;
