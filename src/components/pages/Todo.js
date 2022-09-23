@@ -19,7 +19,7 @@ function Todo() {
     fetch(`https://intense-basin-26666.herokuapp.com/user/get/${userData}`)
       .then((response) => response.json())
       .then((response) => setTodos(response.todo));
-  });
+  }, [todos]);
 
   //----Add todo functionality -----
   const handleCreateTodo = (event) => {
