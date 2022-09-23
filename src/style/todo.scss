@@ -112,14 +112,15 @@
     }
 
     .todos-wrapper {
+      margin-top: -125px;
       .todo-title {
         font-size: 2.5em;
         text-align: center;
-        margin-top: 50px;
+        margin-top: 60px;
       }
 
       .render-wrapper {
-        height: 75vh;
+        height: 50vh;
         width: 75vw;
 
         overflow: auto;
