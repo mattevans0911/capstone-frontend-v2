@@ -20,6 +20,7 @@ function NavBar() {
     axios(configuration)
       .then((response) => {
         sessionStorage.removeItem("username");
+        setUser(true);
       })
       .catch((error) => {
         console.log("error in login", error);
@@ -54,6 +55,10 @@ function NavBar() {
       </div>
     );
   };
+
+  if (user) {
+    <Redirect to="/" />;
+  }
 
   return (
     <div>
