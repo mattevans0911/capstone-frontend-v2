@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 
 function NavBar() {
-  const [user, setUser] = useState(false);
-
   const configuration = {
     method: "post",
     url: "https://intense-basin-26666.herokuapp.com/user/logout",
@@ -16,19 +13,18 @@ function NavBar() {
   };
 
   const handleNavLogout = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     axios(configuration)
       .then((response) => {
         sessionStorage.removeItem("username");
-        setUser(true);
       })
       .catch((error) => {
         console.log("error in login", error);
       });
   };
 
-  const AuthorizedNav = () => {
-    return (
+  return (
+    <div>
       <div className="nav-wrapper">
         <div className="nav-todo">
           <NavLink
@@ -44,25 +40,18 @@ function NavBar() {
             Login
           </NavLink>
 
-          <div
+          <NavLink
+            to="/"
             className="navbar-item"
             activeclassname="is-active"
-            onClick={handleNavLogout}
+            onClick={() => {
+              handleNavLogout();
+            }}
           >
             Logout
-          </div>
+          </NavLink>
         </div>
       </div>
-    );
-  };
-
-  if (user) {
-    <Redirect to="/" />;
-  }
-
-  return (
-    <div>
-      <AuthorizedNav />
     </div>
   );
 }
