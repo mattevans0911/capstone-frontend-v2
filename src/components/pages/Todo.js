@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 function Todo() {
   const [user, setUser] = useState("");
@@ -55,10 +57,14 @@ function Todo() {
     return todos.map((todo) => {
       return (
         <div className="todo-wrapper" key={todo.id}>
-          <div className="todo-content">{todo.content}</div>
-          <button className="button" onClick={(e) => handleDelete(todo.id)}>
-            Delete
-          </button>
+          <div className="todo-element-wrapper">
+            <div className="todo-content">{todo.content}</div>
+            <div className="button-wrapper">
+              <button className="button" onClick={(e) => handleDelete(todo.id)}>
+                <FontAwesomeIcon icon={faTrashCan} />
+              </button>
+            </div>
+          </div>
         </div>
       );
     });
