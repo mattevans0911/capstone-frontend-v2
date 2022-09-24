@@ -20,7 +20,7 @@
   align-items: center;
 
   .form {
-    height: 90vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,6 +31,7 @@
       font-size: 3em;
       color: #2a3166;
       text-align: center;
+      margin-top: -125px;
     }
 
     .todo-input {
@@ -63,11 +64,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: auto;
 
     .todo-title {
       font-size: 4em;
       color: #2a3166;
+      margin-top: -125px;
     }
 
     .render-wrapper {
@@ -156,6 +157,7 @@
   .forms-wrapper {
     display: grid;
     grid-template-columns: auto;
+    margin-top: 75px;
 
     .form {
       height: 30vh;
@@ -167,7 +169,7 @@
     }
 
     .todos-wrapper {
-      margin-top: -125px;
+      margin-top: -175px;
 
       .todo-title {
         font-size: 2.5em;
@@ -194,12 +196,12 @@
 
 @media (max-width: 500px) {
   .welcome-user-wrapper {
-    font-size: 1em;
+    font-size: 1.25em;
   }
 }
 
 @media (max-width: 300px) {
   .welcome-user-wrapper {
-    font-size: 0.75em;
+    font-size: 1em;
   }
 }
