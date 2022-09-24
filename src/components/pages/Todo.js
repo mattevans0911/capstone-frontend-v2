@@ -3,6 +3,7 @@ import axios from "axios";
 import { Redirect } from "react-router-dom";
 
 function Todo() {
+  const [user, setUser] = useState("");
   const [userId, setUserId] = useState();
   const [todos, setTodos] = useState([]);
   const [content, setContent] = useState("");
@@ -18,25 +19,35 @@ function Todo() {
   useEffect(() => {
     fetch(`https://intense-basin-26666.herokuapp.com/user/get/${userData}`)
       .then((response) => response.json())
+      .then((response) => setUser(response.username));
+  }, []);
+
+  useEffect(() => {
+    fetch(`https://intense-basin-26666.herokuapp.com/user/get/${userData}`)
+      .then((response) => response.json())
       .then((response) => setTodos(response.todo));
   }, [todos]);
 
   //----Add todo functionality -----
   const handleCreateTodo = (event) => {
-    event.preventDefault();
-    fetch("https://intense-basin-26666.herokuapp.com/todo/add", {
-      method: "POST",
-      body: JSON.stringify({
-        content: content,
-        user_fk: userId,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => console.log(response));
-    setContent("");
+    if (content === "") {
+      return alert("Please enter text before submitting");
+    } else {
+      event.preventDefault();
+      fetch("https://intense-basin-26666.herokuapp.com/todo/add", {
+        method: "POST",
+        body: JSON.stringify({
+          content: content,
+          user_fk: userId,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((response) => console.log(response));
+      setContent("");
+    }
   };
 
   const renderTodo = () => {
@@ -44,7 +55,7 @@ function Todo() {
       return (
         <div className="todo-wrapper" key={todo.id}>
           <div className="todo-content">{todo.content}</div>
-          <button className="button" onClick={(e) => handleDelete(todo.id, e)}>
+          <button className="button" onClick={(e) => handleDelete(todo.id)}>
             Delete
           </button>
         </div>
@@ -67,6 +78,9 @@ function Todo() {
   } else {
     return (
       <div>
+        <div className="welcome-user-wrapper">
+          <h2>Welcome</h2> <h2 className="user">{user}</h2>
+        </div>
         <div className="forms-wrapper" onSubmit={handleCreateTodo}>
           <form className="form">
             <h3 className="form-title">What Do You Need To Do?</h3>

@@ -1,3 +1,18 @@
+.welcome-user-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  color: #2a3166;
+  font-size: 1.25em;
+  text-align: center;
+
+  .user {
+    margin-left: 10px;
+    text-transform: uppercase;
+  }
+}
+
 .forms-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -174,5 +189,17 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .welcome-user-wrapper {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 300px) {
+  .welcome-user-wrapper {
+    font-size: 0.75em;
   }
 }
