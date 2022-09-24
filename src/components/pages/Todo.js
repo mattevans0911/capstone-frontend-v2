@@ -31,6 +31,7 @@ function Todo() {
   //----Add todo functionality -----
   const handleCreateTodo = (event) => {
     if (content === "") {
+      event.preventDefault();
       return alert("Please enter text before submitting");
     } else {
       event.preventDefault();
