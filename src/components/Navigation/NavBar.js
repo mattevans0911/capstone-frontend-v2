@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
@@ -13,7 +13,6 @@ function NavBar() {
   };
 
   const handleNavLogout = (event) => {
-    // event.preventDefault();
     axios(configuration)
       .then((response) => {
         sessionStorage.removeItem("username");

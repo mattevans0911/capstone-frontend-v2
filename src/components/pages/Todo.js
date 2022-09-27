@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
@@ -80,42 +79,38 @@ function Todo() {
       });
   };
 
-  if (!todos) {
-    return <Redirect to="/todo" />;
-  } else {
-    return (
-      <div>
-        <div className="welcome-user-wrapper">
-          <h2>Welcome</h2> <h2 className="user">{user}</h2>
-        </div>
-        <div className="forms-wrapper" onSubmit={handleCreateTodo}>
-          <form className="form">
-            <h3 className="form-title">What Do You Need To Do?</h3>
-            <div className="todo-input-wrapper">
-              <input
-                className="todo-input"
-                type="content"
-                placeholder="What ToDo?"
-                value={content}
-                onChange={(event) => setContent(event.target.value)}
-              />
-            </div>
-            <div className="button-wrapper">
-              <button className="add-todo-button" type="submit">
-                Add
-              </button>
-            </div>
-          </form>
-          <div className="todos-wrapper">
-            <h2 className="todo-title">What To Do?</h2>
-            <div className="render-wrapper">
-              <div className="todos">{renderTodo()}</div>
-            </div>
+  return (
+    <div>
+      <div className="welcome-user-wrapper">
+        <h2>Welcome</h2> <h2 className="user">{user}</h2>
+      </div>
+      <div className="forms-wrapper" onSubmit={handleCreateTodo}>
+        <form className="form">
+          <h3 className="form-title">What Do You Need To Do?</h3>
+          <div className="todo-input-wrapper">
+            <input
+              className="todo-input"
+              type="content"
+              placeholder="What ToDo?"
+              value={content}
+              onChange={(event) => setContent(event.target.value)}
+            />
+          </div>
+          <div className="button-wrapper">
+            <button className="add-todo-button" type="submit">
+              Add
+            </button>
+          </div>
+        </form>
+        <div className="todos-wrapper">
+          <h2 className="todo-title">What To Do?</h2>
+          <div className="render-wrapper">
+            <div className="todos">{renderTodo()}</div>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Todo;

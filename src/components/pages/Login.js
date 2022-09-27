@@ -65,7 +65,7 @@ function Login() {
           </button>
         </form>
         <h4 className="create-account">
-          If you do not have an account please follow the link
+          If you do not have an account please follow the link below.
         </h4>
         <NavLink
           to="/create-account"
