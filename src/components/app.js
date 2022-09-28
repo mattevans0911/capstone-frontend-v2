@@ -8,9 +8,10 @@ import CreateAccount from "./pages/CreateAccount";
 
 //Home Page - With Local Weather Widget
 //Dynamic Login / Out Button
-//Track How Many Tasks You Completed Vs Entered
+//Track How Many Tasks You've Completed Vs Entered
 
 function App() {
+  console.log("app rendered");
   return (
     <div className="app">
       <Router>

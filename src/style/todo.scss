@@ -79,6 +79,13 @@
       width: 50%;
       overflow: auto;
 
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
       .todos {
         text-align: center;
       }
